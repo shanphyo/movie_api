@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/movieFragment">
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.mic.movie.fragment.MovieFragment"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_movieFragment_to_movieDetailFragment2"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.mic.movie.fragment.MovieDetailFragment"
+        android:label="fragment_movie_detail"
+        tools:layout="@layout/fragment_movie_detail" >
+
+
+        <argument
+            android:name="movieid"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="coverimg"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="movieName"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="movieDate"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="movieRating"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="movieOverReview"
+            app:argType="string"
+            android:defaultValue='""' />
+        <action
+            android:id="@+id/action_movieDetailFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+    </fragment>
+</navigation>
